@@ -1,6 +1,6 @@
 {
   "destinationAddress" : "99999999999999999999999999999999999999999999999IOTA99ITALIA99FULLNODE99STATISTICS",
-  "host": "http://fabryprog-iota.eye.rs",
+  "host": "http://node01.iotatoken.nl",
   "port": 14265,
   "id": "fabryprog-iota.eye.rs"
 }
