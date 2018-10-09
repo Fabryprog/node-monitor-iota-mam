@@ -1,0 +1,23 @@
+{
+  "name": "node-monitor-iota-mam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fabryprog/node-monitor-iota-mam.git"
+  },
+  "author": "",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/Fabryprog/node-monitor-iota-mam/issues"
+  },
+  "homepage": "https://github.com/Fabryprog/node-monitor-iota-mam#readme",
+  "dependencies": {
+    "iota.lib.js": "^0.4.7",
+    "os-utils": "0.0.14"
+  }
+}
