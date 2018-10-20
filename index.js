@@ -1,6 +1,7 @@
 const MAM = require('./lib/mam.client.js');
 const IOTA = require('iota.lib.js');
 var osutils = require('os-utils');
+var fs = require('fs');
 
 var config = require('./config.json');
 
@@ -51,6 +52,11 @@ const publish = async packet => {
     await MAM.attach(message.payload, message.address)
 }
 
+//hostname
+var hostname = fs.readFileSync('/etc/hostname');
+hostname = hostname.toString('utf8', 0, hostname.length);
+hostname = hostname.replace(/(\n|\r)+$/, '').trim();
+
 /************** MAIN *****************/
 const execute = function() {
     // Publish
@@ -58,6 +64,7 @@ const execute = function() {
     osutils.cpuUsage(function(v) {
       var payload = {
           "ts": new Date().getTime(),
+          "hostname": hostname,
           "platform" : osutils.platform(),
           "uptime": osutils.sysUptime() / 60000,
           "cpu": {
@@ -78,7 +85,7 @@ const execute = function() {
 		publish(JSON.stringify(payload));
   });
 
-	}, 30000);
+}, config.interval);
 };
 
 console.log("Executing destinationAddress " + config.destinationAddress);

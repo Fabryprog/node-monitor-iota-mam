@@ -16,7 +16,7 @@ Config file must contains:
 # Run
 
 * Nodejs
- 
+
   * Build
   > npm install
 
@@ -29,11 +29,11 @@ Config file must contains:
   > docker build -t node-monitor-iota-mam .
 
   * Run
-  > docker run --name monitor -v $PWD/config.json:/opt/monitor/config.json -d node-monitor-iota-mam
+  > docker run --name monitor -v /etc/hostname:/etc/hostname:ro -v $PWD/config.json:/opt/monitor/config.json -d node-monitor-iota-mam
 
 # How to work
 
-## First step 
+## First step
 Monitor create a transaction to configured destination address to indicate ROOT MAM Address
 ## Second step
 Every 30 seconds monitor will send statistics to ROOT MAM Address
@@ -41,5 +41,3 @@ Every 30 seconds monitor will send statistics to ROOT MAM Address
 # Example
  1. https://thetangle.org/transaction/PBUCHWQHGGWFHHRZKMOORXRZK9XHNAUFJXCHQBVCSRVUWYCLXPOB9FOZI9UIABMCOQLBEQJEVGAC99999
  2. https://mam.tangle.army/fetch?address=9GKWBZ9TGBKAYUEWPROACYWLYHEJSEGBQBUDMJHSAAOUKAQAFVXSARWQFN9PFLCWOYBWIRAVRHYTDRALB
- 
-
