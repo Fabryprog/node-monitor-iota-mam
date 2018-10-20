@@ -12,6 +12,8 @@ Config file must contains:
    * Iota Node Port
  * id
    * Node ID
+ * intervale
+   * Interval in millis
 
 # Run
 
